@@ -92,20 +92,20 @@ def part2(ra):
             count +=1
         else:
             found = False
-            print(test.levelData)
-            print('searching')
-            for i in range(0,len(row)): #originally had 1 to len(row) - 1  this did not work changing to 0 to len(row) allowed it to function correctly. 
+            pstring = 'SEARCHING with ONE ROW REMOVED {}'.format(test.levelData)
+            for i in range(0,len(row)): #originally had 1 to len(row) - 1  this did not work changing to 0 to len(row) allowed it to function correctly. 6 fails from the bottom of my list origninally found decreasing remove first column in the level row and it is then increasing and works. 
                 newRow = row.copy()
                 del newRow[i]
-                print('     ',newRow)
+                pstring += ', {}'.format(newRow)
                 t = level(newRow)
                 if t.get_Status():
                     found = True
                     count +=1
-                    print('     found') 
+                    pstring = '    FOUND     ' + pstring 
                     break
             if not found:
-                print('Not Found')
+                pstring = 'NOT FOUND     ' + pstring
+            print(pstring)
     print(count)
 
 #part1()
