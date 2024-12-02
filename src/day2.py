@@ -6,7 +6,7 @@ class level():
     provide a list of int for levelData and number of failures allowed (not fully functioning above the count of 1)
     
     '''
-    def __init__(self,levelData -> [], failuresAllowed = 0):
+    def __init__(self,levelData, failuresAllowed = 0):
         self.failuresAllowed = failuresAllowed
         self.failuresDetected = 0
         self.levelData = levelData
